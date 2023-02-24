@@ -6,10 +6,10 @@ using tmdb_api.domain.data_models;
 
 namespace tmdb_api.domain.service_interfaces
 {
-	public interface ISearchCriteriaService
-	{
-		Task SaveSearchCriteriaAsync();
-		Task<SearchCriteria> GetSearchCriteriaBySerachTextAsync(string serachText);
+    public interface ISearchCriteriaService
+    {
+        Task SaveSearchCriteriaAsync(SearchCriteria searchCriteria);
+        Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText, int userId);
 
-	}
+    }
 }

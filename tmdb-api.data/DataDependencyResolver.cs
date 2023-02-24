@@ -13,6 +13,7 @@ namespace tmdb_api.data
     {
         public static IServiceCollection AddDBServices(this IServiceCollection service, IConfiguration configuration)
         {
+            service.AddDbContext<TMDBApiDBContext>(option => option.UseSqlServer(configuration.GetConnectionString("TMDB")));
             service.AddScoped<IUserRepository, UserRepository>();
             service.AddScoped<ISearchCriteriaRepository, SearchCriteriaRepository>();
             service.AddScoped<ISearchResultRepository, SearchResultRepository>();
