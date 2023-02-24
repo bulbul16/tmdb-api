@@ -5,4 +5,12 @@
     <RootNamespace>tmdb_api.data</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tmdb-api.domain\tmdb-api.domain.csproj" />
+  </ItemGroup>
+
 </Project>
