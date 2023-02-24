@@ -6,11 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="data-interfaces\" />
     <Folder Include="enums\" />
     <Folder Include="configuration\" />
-    <Folder Include="view-models\" />
-    <Folder Include="service-interfaces\" />
   </ItemGroup>
 
 </Project>

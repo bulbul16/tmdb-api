@@ -4,7 +4,10 @@ using System.Text;
 
 namespace tmdb_api.domain.enums
 {
-	internal class SearchType
-	{
-	}
+    public enum SearchType
+    {
+        Movie,
+        Person,
+        TV
+    }
 }

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace tmdb_api.domain.configuration
 {
-	internal class Setting
+	public class Setting
 	{
+		public string ApiKey { get; set; }
+		public string ApiBaseUrl { get; set; }
 	}
 }
