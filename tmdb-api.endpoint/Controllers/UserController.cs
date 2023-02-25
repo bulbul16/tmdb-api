@@ -27,7 +27,7 @@ namespace tmdb_api.endpoint.Controllers
             }
             catch (Exception)
             {
-                throw; 
+                return StatusCode(500);
             }
         }
 
@@ -41,7 +41,7 @@ namespace tmdb_api.endpoint.Controllers
             }
             catch (Exception)
             {
-                throw;
+                return StatusCode(500);
             }
         }
     }

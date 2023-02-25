@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\tmdb-api.data\tmdb-api.data.csproj" />
     <ProjectReference Include="..\tmdb-api.service\tmdb-api.service.csproj" />
   </ItemGroup>
 

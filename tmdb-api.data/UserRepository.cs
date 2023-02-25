@@ -18,12 +18,26 @@ namespace tmdb_api.data
         }
         public async Task<User> GetUserByIdAsync(int id)
         {
-            return await _context.Users.FindAsync(id);
+            try
+            {
+                return await _context.Users.FindAsync(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<List<User>> GetUsersAsync()
         {
-            return await _context.Users.ToListAsync();
+            try
+            {
+                return await _context.Users.ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

@@ -19,13 +19,27 @@ namespace tmdb_api.data
         }
         public async Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText, int userId)
         {
-            return await _context.SearchCriterias.Where(c => c.SearchText == serachText && c.UserId == userId).ToListAsync();
+            try
+            {
+                return await _context.SearchCriterias.Where(c => c.SearchText == serachText && c.UserId == userId).ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public async Task SaveSearchCriteriaAsync(SearchCriteria searchCriteria)
         {
-            await _context.SearchCriterias.AddAsync(searchCriteria);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SearchCriterias.AddAsync(searchCriteria);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

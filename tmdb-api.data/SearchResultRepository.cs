@@ -18,12 +18,26 @@ namespace tmdb_api.data
         }
         public async Task<SearchResult> GetSearchResultBySearchIdAsync(int serachId)
         {
-            return await _context.SearchResults.FindAsync(serachId);
+            try
+            {
+                return await _context.SearchResults.FindAsync(serachId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<List<SearchResult>> GetSearchResultsAsync()
         {
-            return await _context.SearchResults.ToListAsync();
+            try
+            {
+                return await _context.SearchResults.ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

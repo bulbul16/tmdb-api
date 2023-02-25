@@ -18,6 +18,7 @@ namespace tmdb_api.data.dbContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Seed();
         }
 
         public DbSet<User> Users { get; set; }

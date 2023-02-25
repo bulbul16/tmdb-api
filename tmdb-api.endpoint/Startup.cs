@@ -9,6 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using tmdb_api.data;
+using tmdb_api.domain.configuration;
+using tmdb_api.service;
 
 namespace tmdb_api.endpoint
 {
@@ -25,6 +28,13 @@ namespace tmdb_api.endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Resolving data and business dependency
+            services.AddDBServices(this.Configuration);
+            services.AddBusinessServices();
+
+            // Read configuration data
+            services.Configure<Settings>(Configuration.GetSection("Settings"));
 
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
             {
