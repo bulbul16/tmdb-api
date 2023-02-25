@@ -39,5 +39,19 @@ namespace tmdb_api.data
                 throw;
             }
         }
+
+        public async Task<int> SaveSearchResult(SearchResult searchResult)
+        {
+            try
+            {
+                await _context.SearchResults.AddAsync(searchResult);
+                await _context.SaveChangesAsync();
+                return searchResult.Id;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

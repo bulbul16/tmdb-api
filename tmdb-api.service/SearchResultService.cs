@@ -25,5 +25,10 @@ namespace tmdb_api.service
         {
             return _repository.GetSearchResultsAsync();
         }
+
+        public async Task<int> SaveSearchResult(SearchResult searchResult)
+        {
+            return await _repository.SaveSearchResult(searchResult);
+        }
     }
 }

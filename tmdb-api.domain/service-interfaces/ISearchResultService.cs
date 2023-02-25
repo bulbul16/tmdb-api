@@ -10,5 +10,7 @@ namespace tmdb_api.domain.service_interfaces
 	{
 		Task<List<SearchResult>> GetSearchResultsAsync();
 		Task<SearchResult> GetSearchResultBySearchIdAsync(int serachId);
-	}
+		Task<int> SaveSearchResult(SearchResult searchResult);
+
+    }
 }

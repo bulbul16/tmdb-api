@@ -29,12 +29,13 @@ namespace tmdb_api.data
             }
         }
 
-        public async Task SaveSearchCriteriaAsync(SearchCriteria searchCriteria)
+        public async Task<int> SaveSearchCriteriaAsync(SearchCriteria searchCriteria)
         {
             try
             {
                 await _context.SearchCriterias.AddAsync(searchCriteria);
                 await _context.SaveChangesAsync();
+                return searchCriteria.Id;
             }
             catch (Exception)
             {
