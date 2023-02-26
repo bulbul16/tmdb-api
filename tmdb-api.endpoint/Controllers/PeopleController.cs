@@ -55,10 +55,10 @@ namespace tmdb_api.endpoint.Controllers
                     // save search criteria
                     int searchId = await _searchCriteriaService.SaveSearchCriteriaAsync(new SearchCriteria() { SearchText = searchText, SearchType = SearchType.People.ToString(), UserId = userId, SearchDate = DateTime.Now });
 
-                    // save movie search Json Result
+                    // save people search Json Result
                     await _searchResultService.SaveSearchResult(new SearchResult() { SearchId = searchId, SearchResultJson = searchResult });
 
-                    // save movie list
+                    // save people list
                     var desirializeData = JsonConvert.DeserializeObject<PeopleSearchResult>(searchResult);
 
                     if (desirializeData != null && desirializeData.Results.Count > 0)

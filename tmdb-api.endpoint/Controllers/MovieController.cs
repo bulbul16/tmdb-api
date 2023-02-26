@@ -88,7 +88,6 @@ namespace tmdb_api.endpoint.Controllers
                             await _movieService.SaveMovie(movieDbModel);
                         }
                     }
-
                     return Ok(desirializeData.Results);
                 }
 
