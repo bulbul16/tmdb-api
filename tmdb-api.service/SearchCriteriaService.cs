@@ -16,9 +16,9 @@ namespace tmdb_api.service
         {
             _repository = repository;
         }
-        public async Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText, int userId)
+        public async Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText)
         {
-            return await _repository.GetSearchCriteriaBySerachTextAsync(serachText, userId);
+            return await _repository.GetSearchCriteriaBySerachTextAsync(serachText);
         }
 
         public async Task<int> SaveSearchCriteriaAsync(SearchCriteria searchCriteria)

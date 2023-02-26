@@ -15,6 +15,8 @@ namespace tmdb_api.service
             service.AddScoped<ISearchResultService, SearchResultService>();
             service.AddScoped<IHttpClientService, HttpClientService>();
 
+            service.AddScoped<IMovieService, MovieService>();
+
             return service;
         }
     }

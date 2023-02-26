@@ -25,5 +25,7 @@ namespace tmdb_api.data.dbContext
         public DbSet<SearchCriteria> SearchCriterias { get; set; }
         public DbSet<SearchResult> SearchResults { get; set; }
 
+        public DbSet<Movie> Movies { get; set; }
+
     }
 }
