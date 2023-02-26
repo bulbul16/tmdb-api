@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +17,44 @@ namespace tmdb_api.data
         {
             _context = context;
         }
-        public Task<TvShow> GetTvShowById(int tvShowId)
+        public async Task<TvShow> GetTvShowById(int tvShowId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var tvShow = await _context.TvShows.Where(c => c.TvShowId == tvShowId).FirstOrDefaultAsync();
+                return tvShow;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public Task<List<TvShow>> GetTvShows(int searchId)
+        public async Task<List<TvShow>> GetTvShows(int searchId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var tvShowList = await _context.TvShows.Where(c => c.SearchId == searchId).ToListAsync();
+                return tvShowList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public Task<int> SaveTvShow(TvShow tvShow)
+        public async Task<int> SaveTvShow(TvShow tvShow)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _context.TvShows.AddAsync(tvShow);
+                await _context.SaveChangesAsync();
+                return tvShow.Id;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

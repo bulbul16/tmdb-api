@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tmdb_api.data.dbContext;
 
 namespace tmdb_api.data.Migrations
 {
     [DbContext(typeof(TMDBApiDBContext))]
-    partial class TMDBApiDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230226202528_TvShowModelAdded")]
+    partial class TvShowModelAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

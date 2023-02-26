@@ -8,6 +8,6 @@ namespace tmdb_api.domain.enums
     {
         Movie,
         People,
-        TV
+        TvShows
     }
 }

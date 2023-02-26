@@ -27,7 +27,7 @@ namespace tmdb_api.data.dbContext
 
         public DbSet<Movie> Movies { get; set; }
         public DbSet<People> Peoples { get; set; }
-        //public DbSet<TvShow> TvShows { get; set; }
+        public DbSet<TvShow> TvShows { get; set; }
 
     }
 }
