@@ -17,11 +17,11 @@ namespace tmdb_api.data
         {
             _context = context;
         }
-        public async Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText)
+        public async Task<SearchCriteria> GetSearchCriteriaBySerachTextAsync(string serachText, string searchType)
         {
             try
             {
-                return await _context.SearchCriterias.Where(c => c.SearchText == serachText).ToListAsync();
+                return await _context.SearchCriterias.Where(c => c.SearchText == serachText && c.SearchType == searchType).FirstOrDefaultAsync();
             }
             catch (Exception)
             {

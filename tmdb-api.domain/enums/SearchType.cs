@@ -7,7 +7,7 @@ namespace tmdb_api.domain.enums
     public enum SearchType
     {
         Movie,
-        Person,
+        People,
         TV
     }
 }

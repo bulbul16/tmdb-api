@@ -19,6 +19,8 @@ namespace tmdb_api.data
             service.AddScoped<ISearchResultRepository, SearchResultRepository>();
 
             service.AddScoped<IMovieRepository, MovieRepository>();
+            service.AddScoped<IPeopleRepository, PeopleRepository>();
+            service.AddScoped<IMovieRepository, MovieRepository>();
             return service;
         }
     }

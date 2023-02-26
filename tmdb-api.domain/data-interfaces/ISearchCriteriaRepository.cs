@@ -9,7 +9,7 @@ namespace tmdb_api.domain.data_interfaces
     public interface ISearchCriteriaRepository
     {
         Task<int> SaveSearchCriteriaAsync(SearchCriteria searchCriteria);
-        Task<List<SearchCriteria>> GetSearchCriteriaBySerachTextAsync(string serachText);
+        Task<SearchCriteria> GetSearchCriteriaBySerachTextAsync(string serachText, string searchType);
 
     }
 }
